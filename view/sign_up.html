@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="st-layout ls-top-navbar ls-bottom-footer show-sidebar sidebar-l2" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Pic2share</title>
+
+ 
+  <link href="../css/vendor/all.css" rel="stylesheet">
+  <link href="../css/app/app.css" rel="stylesheet">
+
+<div class="page-section">
+  <div class="row">
+    <div class="col-md-8 col-lg-6 col-md-offset-1 col-lg-offset-2">
+
+      <h4 class="page-section-heading">Sign up Information </h4>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form action="../control/sign_up.php" method="post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group form-control-default">
+                  <label for="InputFullname">Full name</label>
+                  <input type="text" class="form-control" id="InputFullname" name="InputFullname" placeholder="Your full name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group form-control-default required">
+                  <label for="InputUsername">Username</label>
+                  <input type="text" class="form-control" id="InputUsername" name="InputUsername" placeholder="Your last name" onblur="check()">
+                  <p id="z-username"></p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-control-default required">
+              <label for="InputPass">Password</label>
+              <input type="password" class="form-control" id="InputPass" name="InputPass" placeholder="Password" onblur="check()">
+              <p id="z-pass"></p>
+            </div>
+            <div class="form-group form-control-default required">
+              <label for="InputRPass">Retype Password</label>
+              <input type="password" class="form-control" id="InputRPass" name="InputRPass" placeholder="Retype Your Password" onblur="password()">
+              <p id="z-repass"></p>
+            </div>
+            <div class="form-group form-control-default required">
+              <label for="InputEmail">Email address</label>
+              <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" onblur="check()">
+              <p id="z-email"></p>
+            </div>
+            <div class="form-group form-control-default">
+              <label for="InputAddress">Address</label>
+              <input type="text" class="form-control" id="InputAddress" name="InputAddress" placeholder="Enter Your Address">
+            </div>
+            <div class="form-group form-control-default">
+              <label for="InputCompany">Company</label>
+              <input type="text" class="form-control" id="InputCompany" name="InputCompany" placeholder="Enter Your company">
+            </div>
+              <input type="submit" class="btn btn-primary" value="SignUp" name="submit" onclick="submit()">
+              <button type="reset" class="btn btn-warning" name="reset">Reset</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script> 
+
+
+  function check()
+  {
+
+     var data = new Array();
+  data[0] = document.getElementById('InputUsername').value;
+  data[1] = document.getElementById('InputPass').value;
+  data[2] = document.getElementById('InputRPass').value; 
+  data[3] = document.getElementById('InputEmail').value;
+
+  var myerror = new Array();
+  myerror[0] = "<span style='color:red,font-weight:bold'>Bạn chưa nhập username</span>";
+  myerror[1] = "<span style='color:red,font-weight:bold'>Bạn chưa nhập mật khẩu</span>";
+  myerror[2] = "<span style='color:red,font-weight:bold'>Mật khẩu chưa khớp</span>";
+  myerror[3] = "<span style='color:red,font-weight:bold'>Bạn chưa nhập email</span>";
+
+  var nearby = new Array("z-username", "z-pass", "z-repass", "z-email");
+    for (i in data) {
+    var error = myerror[i];
+    var div = nearby[i];
+ 
+    if (data[i]=="") 
+    {
+        document.getElementById(div).innerHTML = error;
+		return false;
+    } 
+    else 
+    {
+        document.getElementById(div).innerHTML = "<span style:color='green'>v</span>";
+		return true;
+    }
+  }
+  
+function submit()
+{
+	var result = check();
+	if(result == 0)
+	{
+		windown.location="sign_up.html";
+	}
+}
+
+function password() 
+{
+  var fpw = document.getElementById("InputPass").value;
+  var spw = document.getElementById("InputRPass").value;
+  var nearby = new Array("z-username", "z-pass", "z-repass", "z-email");
+ 
+  if (fpw==spw) 
+  {
+    document.getElementById('z-repass').innerHTML = "<span color='green'>v</span>";
+  } 
+  else 
+  {
+    document.getElementById('z-repass').innerHTML = "<span color='red'>x</span>";
+  }
+}
+
+}
+
+</script>
+
+</html>
