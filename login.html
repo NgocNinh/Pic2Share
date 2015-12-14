@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="hide-sidebar ls-bottom-footer" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Pic2share</title>
+
+
+  <link href="public/css/vendor/all.css" rel="stylesheet">
+
+  <link href="public/css/app/app.css" rel="stylesheet">
+
+ 
+</head>
+
+<body class="login">
+
+  <div id="content">
+    <div class="container-fluid">
+
+      <div class="lock-container">
+        <h1>Account Access</h1>
+        <div class="panel panel-default text-center">
+          <form action='user_manager/user_login.php' method='post'>
+            <img src="images/login-icon.png" class="img-circle">
+            <div class="panel-body">
+              <input class="form-control" type="text" placeholder="Username" name='username'>
+              <input class="form-control" type="password" placeholder="Enter Password" name='password'>
+              <input type='submit' name='ok' value='Login' class="btn btn-primary">
+              <a href="user_manager/sign_up.html">
+                <input type='button' value='SignUp' class="btn btn-warning">                
+              </a>
+              <i class="fa fa-fw fa-unlock-alt"></i>
+              <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+          </form>         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <strong>Pic2Share</strong> v1.0&copy; Copyright 2015
+  </footer>
+  <script>
+    var colors = {
+      "danger-color": "#e74c3c",
+      "success-color": "#81b53e",
+      "warning-color": "#f0ad4e",
+      "inverse-color": "#2c3e50",
+      "info-color": "#2d7cb5",
+      "default-color": "#6e7882",
+      "default-light-color": "#cfd9db",
+      "purple-color": "#9D8AC7",
+      "mustard-color": "#d4d171",
+      "lightred-color": "#e15258",
+      "body-bg": "#f6f6f6"
+    };
+    var config = {
+      theme: "social-2",
+      skins: {
+        "default": {
+          "primary-color": "#16ae9f"
+        },
+        "orange": {
+          "primary-color": "#e74c3c"
+        },
+        "blue": {
+          "primary-color": "#4687ce"
+        },
+        "purple": {
+          "primary-color": "#af86b9"
+        },
+        "brown": {
+          "primary-color": "#c3a961"
+        },
+        "default-nav-inverse": {
+          "color-block": "#242424"
+        }
+      }
+    };
+  </script>
+
+  <script src="public/js/vendor/all.js"></script>
+
+ 
+  <script src="public/js/app/app.js"></script>
+
+</body>
+
+</html>
